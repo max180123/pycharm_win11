@@ -1,0 +1,20 @@
+while True:
+    cement = float(input("请输入水泥的质量:"))
+    silica_fume = float(input("请输入硅灰的质量:"))
+    blast_furnace = float(input("请输入高炉的质量:"))
+    cement_calcium_oxide = cement * 0.64
+    cement_silica = cement * 0.21
+    cement_alumina = cement * 0.045
+    blast_furnace_calcium_oxide= blast_furnace * 0.3653
+    blast_furnace_silica = blast_furnace * 0.3576
+    blast_furnace_alumina = blast_furnace * 0.0939
+    calcium_oxide_in_silica_fume = silica_fume * 0.005
+    silica_fume = silica_fume * 0.971
+    silica_fume_alumina = silica_fume * 0.0021
+    mole_calcium_oxide = (cement_calcium_oxide+blast_furnace_calcium_oxide+calcium_oxide_in_silica_fume)/ 56
+    mole_silicon_dioxide = (cement_silica+blast_furnace_silica+silica_fume) / 60
+    molea_lumina = (cement_alumina+blast_furnace_alumina+silica_fume_alumina) / 102
+    calcium_silicon_ratio = mole_calcium_oxide / mole_silicon_dioxide
+    aluminum_silicon_ratio = molea_lumina * 2 / mole_silicon_dioxide
+    print(f"钙硅比={calcium_silicon_ratio:.3f}")
+    print(f"铝硅比={aluminum_silicon_ratio:.3f}")
